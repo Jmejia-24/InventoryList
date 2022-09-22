@@ -32,7 +32,6 @@ final class MainListViewModel {
 // MARK: - CoreData
 
 extension MainListViewModel {
-    
     private func fetch() {
         services.fetch { [unowned self] result in
             switch result {
@@ -83,7 +82,8 @@ extension MainListViewModel: MainViewModelProtocol {
     }
     
     func editButtonTapped(at: IndexPath) {
-        
+        let productObject = productObjects![at.row]
+        transitionDelegate?.process(transition: .showEdit, with: productObject)
     }
     
     func didSelectRow(_ row: Int) {

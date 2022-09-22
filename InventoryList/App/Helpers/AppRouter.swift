@@ -11,7 +11,8 @@ import UIKit
 
 final class AppRouter {
     private var coordinatorRegister: [Transition: Coordinator] = [.showMainScreen: MainListCoordinator(),
-                                                                  .showAdd: AddProductCoordinator()]
+                                                                  .showAdd: AddProductCoordinator(),
+                                                                  .showEdit: EditProductCoordinator()]
     let navigationViewController = UINavigationController()
 
     func start() {

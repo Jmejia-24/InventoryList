@@ -28,11 +28,14 @@
 		3068AB2628DB9C0000EC174D /* AddProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB2528DB9C0000EC174D /* AddProductCoordinator.swift */; };
 		3068AB2928DB9C6B00EC174D /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB2828DB9C6B00EC174D /* AddProductViewModel.swift */; };
 		3068AB2B28DB9C8D00EC174D /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB2A28DB9C8D00EC174D /* AddProductViewController.swift */; };
-		3068AB2D28DBA48F00EC174D /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB2C28DBA48F00EC174D /* AddProductView.swift */; };
 		3068AB2F28DBA4C300EC174D /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB2E28DBA4C300EC174D /* ViewCodeProtocol.swift */; };
 		3068AB3128DBA61B00EC174D /* UIStackView+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3028DBA61B00EC174D /* UIStackView+Spacing.swift */; };
 		3068AB3328DBB50300EC174D /* UIAlertController+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3228DBB50300EC174D /* UIAlertController+Builder.swift */; };
 		3068AB3628DBB91600EC174D /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3528DBB91600EC174D /* Failure.swift */; };
+		3068AB3B28DC02C300EC174D /* EditProductCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3A28DC02C300EC174D /* EditProductCoordinator.swift */; };
+		3068AB3D28DC031400EC174D /* EditProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3C28DC031400EC174D /* EditProductViewModel.swift */; };
+		3068AB3F28DC046300EC174D /* EditProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB3E28DC046300EC174D /* EditProductViewController.swift */; };
+		3068AB4128DC094D00EC174D /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068AB4028DC094D00EC174D /* ProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,11 +62,14 @@
 		3068AB2528DB9C0000EC174D /* AddProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductCoordinator.swift; sourceTree = "<group>"; };
 		3068AB2828DB9C6B00EC174D /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		3068AB2A28DB9C8D00EC174D /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
-		3068AB2C28DBA48F00EC174D /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		3068AB2E28DBA4C300EC174D /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		3068AB3028DBA61B00EC174D /* UIStackView+Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Spacing.swift"; sourceTree = "<group>"; };
 		3068AB3228DBB50300EC174D /* UIAlertController+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Builder.swift"; sourceTree = "<group>"; };
 		3068AB3528DBB91600EC174D /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
+		3068AB3A28DC02C300EC174D /* EditProductCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductCoordinator.swift; sourceTree = "<group>"; };
+		3068AB3C28DC031400EC174D /* EditProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductViewModel.swift; sourceTree = "<group>"; };
+		3068AB3E28DC046300EC174D /* EditProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductViewController.swift; sourceTree = "<group>"; };
+		3068AB4028DC094D00EC174D /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		3068AAFB28DAD6CB00EC174D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3068AB3728DC026800EC174D /* EditProduct */,
 				3068AB2228DB99C600EC174D /* AddProduct */,
 				3068AAFF28DAD7E900EC174D /* MainList */,
 				3068AAFC28DAD6FD00EC174D /* Helpers */,
@@ -226,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				3068AB2A28DB9C8D00EC174D /* AddProductViewController.swift */,
-				3068AB2C28DBA48F00EC174D /* AddProductView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +243,33 @@
 				3068AB3528DBB91600EC174D /* Failure.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		3068AB3728DC026800EC174D /* EditProduct */ = {
+			isa = PBXGroup;
+			children = (
+				3068AB3A28DC02C300EC174D /* EditProductCoordinator.swift */,
+				3068AB3928DC029900EC174D /* View */,
+				3068AB3828DC028E00EC174D /* ViewModel */,
+			);
+			path = EditProduct;
+			sourceTree = "<group>";
+		};
+		3068AB3828DC028E00EC174D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3068AB3C28DC031400EC174D /* EditProductViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3068AB3928DC029900EC174D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3068AB3E28DC046300EC174D /* EditProductViewController.swift */,
+				3068AB4028DC094D00EC174D /* ProductView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,13 +348,14 @@
 				3068AB3128DBA61B00EC174D /* UIStackView+Spacing.swift in Sources */,
 				3068AB2B28DB9C8D00EC174D /* AddProductViewController.swift in Sources */,
 				3068AB2F28DBA4C300EC174D /* ViewCodeProtocol.swift in Sources */,
-				3068AB2D28DBA48F00EC174D /* AddProductView.swift in Sources */,
 				3068AB1728DAE98C00EC174D /* Services.swift in Sources */,
 				3068AB1328DAE0EE00EC174D /* ProductViewDataType.swift in Sources */,
 				3068AB2628DB9C0000EC174D /* AddProductCoordinator.swift in Sources */,
+				3068AB3B28DC02C300EC174D /* EditProductCoordinator.swift in Sources */,
 				3068AB0F28DADB9200EC174D /* MainListViewController.swift in Sources */,
 				3068AB0428DAD9E200EC174D /* Transition.swift in Sources */,
 				3068AB1128DADFED00EC174D /* Product.swift in Sources */,
+				3068AB3F28DC046300EC174D /* EditProductViewController.swift in Sources */,
 				3068AB0228DAD9BB00EC174D /* Coordinator.swift in Sources */,
 				3068AB1C28DAEB6F00EC174D /* CoreDataStack.swift in Sources */,
 				3068AB0628DADA1000EC174D /* AppRouter.swift in Sources */,
@@ -329,7 +363,9 @@
 				3068AB2928DB9C6B00EC174D /* AddProductViewModel.swift in Sources */,
 				3068AB0B28DADABD00EC174D /* MainListCoordinator.swift in Sources */,
 				3068AAEF28DAD40200EC174D /* InventoryList.xcdatamodeld in Sources */,
+				3068AB4128DC094D00EC174D /* ProductView.swift in Sources */,
 				3068AB3328DBB50300EC174D /* UIAlertController+Builder.swift in Sources */,
+				3068AB3D28DC031400EC174D /* EditProductViewModel.swift in Sources */,
 				3068AAE528DAD40200EC174D /* AppDelegate.swift in Sources */,
 				3068AB0D28DADB0200EC174D /* MainListViewModel.swift in Sources */,
 				3068AB1A28DAE9B400EC174D /* Storage.swift in Sources */,

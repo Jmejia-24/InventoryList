@@ -9,11 +9,11 @@ import UIKit
 
 final class AddProductViewController: UIViewController {
     private let viewModel: AddProductViewModel
-    private var contentView: AddProductView?
+    private var contentView: ProductView?
     
     init(viewModel: AddProductViewModel) {
         self.viewModel = viewModel
-        self.contentView = AddProductView()
+        self.contentView = ProductView()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,6 +28,7 @@ final class AddProductViewController: UIViewController {
     
     private func setUI() {
         view = contentView
+        title = "Add New Product"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", primaryAction: UIAction { [unowned self] _ in
             makeProduct()
         })

@@ -58,7 +58,7 @@ extension MainListViewController {
         var configuration = cell.defaultContentConfiguration()
         let cellData = viewModel.cellDataFor(row: indexPath.row)
         configuration.text = cellData.title.capitalized
-        configuration.secondaryText = cellData.price
+        configuration.secondaryText = "$ \(cellData.price)"
         
         cell.contentConfiguration = configuration
         

@@ -1,5 +1,5 @@
 //
-//  AddProductView.swift
+//  ProductView.swift
 //  InventoryList
 //
 //  Created by Byron Mejia on 9/21/22.
@@ -7,16 +7,22 @@
 
 import UIKit
 
-final class AddProductView: UIView {
+final class ProductView: UIView {
+    
+    private var product: Product?
     let descriptionPlaceHolderText = "Write description of your product here! "
-
+    
     var titleProduct: String { titleTextField.text ?? "" }
     var priceProduct: String { priceTextField.text ?? "" }
     var descriptionProduct: String { descriptionTextView.text }
     
-    init() {
+    init(product: Product? = nil) {
+        self.product = product
         super.init(frame: .zero)
         buildView()
+        titleTextField.text = ""
+        priceTextField.text = ""
+        descriptionTextView.text = descriptionPlaceHolderText
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,7 +50,6 @@ final class AddProductView: UIView {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.delegate = self
         textView.textAlignment = .natural
-        textView.text = descriptionPlaceHolderText
         textView.layer.cornerRadius = 5
         textView.layer.borderColor = UIColor.darkGray.cgColor
         textView.layer.borderWidth = 1
@@ -63,9 +68,20 @@ final class AddProductView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    private func setUI() {
+        guard let product = product else {
+            
+            return
+        }
+        
+        titleTextField.text = product.title
+        priceTextField.text = product.price
+        descriptionTextView.text = product.description
+    }
 }
 
-extension AddProductView: ViewCodeProtocol {
+extension ProductView: ViewCodeProtocol {
     
     func setupHierarchy() {
         containerStackView.addArrangedSubview(titleTextField)
@@ -100,10 +116,11 @@ extension AddProductView: ViewCodeProtocol {
     
     func additionalSetup() {
         backgroundColor = .tertiarySystemBackground
+        setUI()
     }
 }
 
-extension AddProductView: UITextViewDelegate {
+extension ProductView: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
