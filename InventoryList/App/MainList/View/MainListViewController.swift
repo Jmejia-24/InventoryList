@@ -43,6 +43,24 @@ final class MainListViewController: UITableViewController {
         })
         viewModel.start()
     }
+
+    private func stateButtonConfiguration(for indexPath: IndexPath, state: Bool) -> UIButton {
+        let symbolName = state ? "checkmark.circle.fill" : "circle"
+        let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
+        let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
+        let button = UIButton()
+
+        let action = UIAction { [unowned self] _ in
+            var newState = state
+            newState.toggle()
+            viewModel.productStateButtonTapped(at: indexPath, state: newState)
+        }
+
+        button.addAction(action, for: .touchUpInside)
+        button.setImage(image, for: .normal)
+        button.sizeToFit()
+        return button
+    }
 }
 
 extension MainListViewController {
@@ -53,7 +71,6 @@ extension MainListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.selectionStyle = .none
-        cell.accessoryType = .disclosureIndicator
         
         var configuration = cell.defaultContentConfiguration()
         let cellData = viewModel.cellDataFor(row: indexPath.row)
@@ -61,6 +78,8 @@ extension MainListViewController {
         configuration.secondaryText = "$ \(cellData.price)"
         
         cell.contentConfiguration = configuration
+        
+        cell.accessoryView = stateButtonConfiguration(for: indexPath, state: cellData.isSoldOut)
         
         return cell
     }

@@ -57,6 +57,17 @@ extension MainListViewModel {
             }
         }
     }
+    
+    func update(productObject: ProductObject) {
+        services.update(productManagedObject: productObject) { [unowned self] result in
+            switch result {
+                case .success:
+                    start()
+                case .failure(let error):
+                    print(error)
+            }
+        }
+    }
 }
 
 extension MainListViewModel: MainViewModelProtocol {
@@ -77,12 +88,26 @@ extension MainListViewModel: MainViewModelProtocol {
         transitionDelegate?.process(transition: .showAdd, with: nil)
     }
     
+    func productStateButtonTapped(at: IndexPath, state: Bool) {
+        guard let productObjectType = productObjects?[at.row],
+              var productObj = productObjectType as? ProductObject,
+        let product = productObj.product else { return }
+        let newProduct = Product(id: product.id,
+                                 title: product.title,
+                                 description: product.description,
+                                 price: product.price,
+                                 isSoldOut: state)
+        
+        productObj.product = newProduct
+        update(productObject: productObj)
+    }
+    
     func deleteButtonTapped(at: IndexPath) {
         delete(index: at.row)
     }
     
     func editButtonTapped(at: IndexPath) {
-        let productObject = productObjects![at.row]
+        guard let productObject = productObjects?[at.row] else { return }
         transitionDelegate?.process(transition: .showEdit, with: productObject)
     }
     

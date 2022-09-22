@@ -24,6 +24,8 @@ protocol MainViewModelProtocol {
     func editButtonTapped(at: IndexPath)
     
     func didSelectRow(_ row: Int)
+    
+    func productStateButtonTapped(at: IndexPath, state: Bool)
 }
 
 protocol MainViewModelViewDelegate {
