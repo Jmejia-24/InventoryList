@@ -58,7 +58,7 @@ extension MainListViewModel {
         }
     }
     
-    func update(productObject: ProductObject) {
+    private func update(productObject: ProductObject) {
         services.update(productManagedObject: productObject) { [unowned self] result in
             switch result {
                 case .success:
