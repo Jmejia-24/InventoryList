@@ -20,9 +20,6 @@ final class ProductView: UIView {
         self.product = product
         super.init(frame: .zero)
         buildView()
-        titleTextField.text = ""
-        priceTextField.text = ""
-        descriptionTextView.text = descriptionPlaceHolderText
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,10 +67,7 @@ final class ProductView: UIView {
     }()
     
     private func setUI() {
-        guard let product = product else {
-            
-            return
-        }
+        guard let product = product else { return }
         
         titleTextField.text = product.title
         priceTextField.text = product.price

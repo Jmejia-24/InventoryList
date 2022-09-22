@@ -87,7 +87,9 @@ extension MainListViewModel: MainViewModelProtocol {
     }
     
     func didSelectRow(_ row: Int) {
-        
+        guard let product = productObjects?[row].product else { return }
+        let productViewData = ProductViewData(product: product)
+        transitionDelegate?.process(transition: .showDetailView, with: productViewData)
     }
     
 }

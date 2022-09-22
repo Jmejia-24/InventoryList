@@ -80,6 +80,10 @@ extension MainListViewController {
         let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return swipeActions
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(indexPath.row)
+    }
 }
 
 extension MainListViewController: MainViewModelViewDelegate {

@@ -15,4 +15,5 @@ enum Transition {
     case showMainScreen
     case showAdd
     case showEdit
+    case showDetailView
 }

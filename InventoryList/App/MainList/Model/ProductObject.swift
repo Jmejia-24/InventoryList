@@ -29,18 +29,18 @@ struct ProductObject: ProductObjectType {
            let title = nsManagedObj.value(forKey: "title"),
            let description = nsManagedObj.value(forKey: "productDescription"),
            let price = nsManagedObj.value(forKey: "price"),
-           let isSoldOutObj = nsManagedObj.value(forKey: "isSoldOut") {
+           let isSoldOutObj = nsManagedObj.value(forKey: "isSoldOut"),
+            let isSoldOut = isSoldOutObj as? Bool {
             let id = "\(id)"
             let title = "\(title)"
             let description = "\(description)"
             let price = "\(price)"
-            let isSoldOut = isSoldOutObj
             
             product = Product(id: id,
                               title: title,
                               description: description,
                               price: price,
-                              isSoldOut: isSoldOut as! Bool)
+                              isSoldOut: isSoldOut)
         }
     }
     
